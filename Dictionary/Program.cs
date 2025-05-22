@@ -20,6 +20,17 @@ namespace Dictionary
                 Console.WriteLine(employee.Key + ": " + employee.Value);
             }
             Console.WriteLine("-----------");
+            // fetch value based on key
+            string s = employees[101];
+            Console.WriteLine(s);
+
+            // storing all keys using KeyCollection class
+            Dictionary<int, string>.KeyCollection keys = employees.Keys;
+            foreach (int item in keys)
+            {
+                Console.WriteLine(item);
+                Console.WriteLine(employees[item]);
+            }
 
         }
     }
