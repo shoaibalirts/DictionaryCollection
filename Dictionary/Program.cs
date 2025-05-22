@@ -15,6 +15,7 @@ namespace Dictionary
             };
             Console.WriteLine("Key: Value");
             Console.WriteLine("-----------");
+            employees.Remove(102);
             foreach (KeyValuePair<int, string> employee in employees)
             {
                 Console.WriteLine(employee.Key + ": " + employee.Value);
@@ -23,6 +24,17 @@ namespace Dictionary
             // fetch value based on key
             string s = employees[101];
             Console.WriteLine(s);
+            bool existedEmployee = employees.ContainsKey(101);
+            if (existedEmployee)
+            {
+                Console.WriteLine("Employee ID 101 exists");
+            }
+            Console.WriteLine(existedEmployee);
+            existedEmployee = employees.ContainsKey(102);
+            if (!existedEmployee)
+            {
+                Console.WriteLine("Employee ID 102 does not exist");
+            }
 
             // storing all keys using KeyCollection class
             Dictionary<int, string>.KeyCollection keys = employees.Keys;
