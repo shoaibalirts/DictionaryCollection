@@ -34,8 +34,19 @@ namespace Dictionary
             if (!existedEmployee)
             {
                 Console.WriteLine("Employee ID 102 does not exist");
+                Console.WriteLine("Adding ID 102...");
+                employees[102] = "Muhammad Ahmed";
+                existedEmployee = employees.ContainsKey(102);
+                if (existedEmployee)
+                {
+                    Console.WriteLine("Confirmed that " + employees[102] + " has been added to the employees collection");
+                }
             }
-
+            bool existedEmployeeName = employees.ContainsValue("Shoaib Ali");
+            if (existedEmployeeName)
+            {
+                Console.WriteLine(employees[101] + " is available");
+            }
             // storing all keys using KeyCollection class
             Dictionary<int, string>.KeyCollection keys = employees.Keys;
             foreach (int item in keys)
